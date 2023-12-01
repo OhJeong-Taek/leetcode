@@ -2,7 +2,10 @@ class Solution:
     def isHappy(self, n: int) -> bool:
         s = set()
         while True:
-            n = sum([int(i)**2 for i in str(n)])
+            temp = 0
+            for x in str(n):
+                temp += int(x)**2
+            n = temp
             if n == 1:
                 return True
             if n in s:
