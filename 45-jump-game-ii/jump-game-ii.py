@@ -1,5 +1,8 @@
 class Solution:
     def jump(self, nums: List[int]) -> int:
+        if len(nums) == 1: return 0
+        if nums[0] >= len(nums)-1: return 1
+        
         ans = 0
         end = 0
         farthest = 0
