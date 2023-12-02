@@ -4,7 +4,7 @@ class Solution:
         min_v = prices[0]
         ans = 0
         for p in prices:
-            ans = max(ans, p - min_v)
-            min_v = min(min_v, p)
+            if p - min_v > ans: ans = p - min_v
+            if p < min_v: min_v = p
             
         return ans
