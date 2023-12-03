@@ -9,7 +9,9 @@ class Solution:
         
         for i in range(1, len(nums)):
             if nums[i] != nums[i-1] + 1:
-                ans.append(f"{start}->{nums[i-1]}" if start != nums[i-1] else f"{nums[i-1]}")
+                if start != nums[i-1]: ans.append(f"{start}->{nums[i-1]}")
+                else: ans.append(f"{nums[i-1]}")
+                #ans.append(f"{start}->{nums[i-1]}" if start != nums[i-1] else f"{nums[i-1]}")
                 start = nums[i]
         
         
